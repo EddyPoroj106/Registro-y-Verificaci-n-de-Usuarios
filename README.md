@@ -29,68 +29,67 @@ proyecto-registro/
 
 classDiagram
 
-\\\\\\\&#x20;   class Usuario {
+&#x20;   class Usuario {
 
-\\\\\\\&#x20;       +int id
+&#x20;       +int id
 
-\\\\\\\&#x20;       +string nombre
+&#x20;       +string nombre
 
-\\\\\\\&#x20;       +string email
+&#x20;       +string email
 
-\\\\\\\&#x20;       +string password
+&#x20;       +string password
 
-\\\\\\\&#x20;       +bool verificado
+&#x20;       +bool verificado
 
-\\\\\\\&#x20;       +string tokenVerificacion
+&#x20;       +string tokenVerificacion
 
-\\\\\\\&#x20;       +datetime tokenExpira
+&#x20;       +datetime tokenExpira
 
-\\\\\\\&#x20;       +datetime creadoEn
+&#x20;       +datetime creadoEn
 
-\\\\\\\&#x20;   }
-
-
-
-\\\\\\\&#x20;   class UsuarioRepository {
-
-\\\\\\\&#x20;       +crearUsuario(datos) int
-
-\\\\\\\&#x20;       +buscarPorEmail(email) Usuario
-
-\\\\\\\&#x20;       +buscarPorToken(token) Usuario
-
-\\\\\\\&#x20;       +marcarComoVerificado(id) void
-
-\\\\\\\&#x20;       +listarUsuarios() Usuario\\\\\\\\\\\\\\\[]
-
-\\\\\\\&#x20;   }
+&#x20;   }
 
 
 
-\\\\\\\&#x20;   class EmailService {
+&#x20;   class UsuarioRepository {
 
-\\\\\\\&#x20;       +enviarCorreoVerificacion(destinatario, nombre, enlace) void
+&#x20;       +crearUsuario(datos) int
 
-\\\\\\\&#x20;   }
+&#x20;       +buscarPorEmail(email) Usuario
 
+&#x20;       +buscarPorToken(token) Usuario
 
+&#x20;       +marcarComoVerificado(id) void
 
-\\\\\\\&#x20;   class AuthController {
+&#x20;       +listarUsuarios() Usuario\[]
 
-\\\\\\\&#x20;       +registrar(req, res) void
-
-\\\\\\\&#x20;       +verificar(req, res) void
-
-\\\\\\\&#x20;   }
+&#x20;   }
 
 
 
-\\\\\\\&#x20;   AuthController --> UsuarioRepository : usa
+&#x20;   class EmailService {
 
-\\\\\\\&#x20;   AuthController --> EmailService : usa
+&#x20;       +enviarCorreoVerificacion(destinatario, nombre, enlace) void
 
-\\\\\\\&#x20;   UsuarioRepository --> Usuario : gestiona
+&#x20;   }
 
+
+
+&#x20;   class AuthController {
+
+&#x20;       +registrar(req, res) void
+
+&#x20;       +verificar(req, res) void
+
+&#x20;   }
+
+
+
+&#x20;   AuthController --> UsuarioRepository : usa
+
+&#x20;   AuthController --> EmailService : usa
+
+&#x20;   UsuarioRepository --> Usuario : gestiona
 ```
 
 
@@ -103,7 +102,7 @@ classDiagram
 
 ```
 
-&#x20;  npm install
+\\\&#x20;  npm install
 
 ```
 
@@ -113,7 +112,7 @@ classDiagram
 
 ```
 
-&#x20;  cp .env.example .env
+\\\&#x20;  cp .env.example .env
 
 ```
 
@@ -131,15 +130,15 @@ classDiagram
 
 ```
 
-&#x20;    SMTP\_HOST=smtp.gmail.com
+\\\&#x20;    SMTP\\\\\\\_HOST=smtp.gmail.com
 
-&#x20;    SMTP\_PORT=587
+\\\&#x20;    SMTP\\\\\\\_PORT=587
 
-&#x20;    SMTP\_USER=tucorreo@gmail.com
+\\\&#x20;    SMTP\\\\\\\_USER=tucorreo@gmail.com
 
-&#x20;    SMTP\_PASS=la\_contraseña\_de\_aplicacion
+\\\&#x20;    SMTP\\\\\\\_PASS=la\\\\\\\_contraseña\\\\\\\_de\\\\\\\_aplicacion
 
-&#x20;    SMTP\_FROM=tucorreo@gmail.com
+\\\&#x20;    SMTP\\\\\\\_FROM=tucorreo@gmail.com
 
 ```
 
@@ -153,7 +152,7 @@ classDiagram
 
 ```
 
-&#x20;  npm start
+\\\&#x20;  npm start
 
 ```
 
@@ -173,7 +172,7 @@ classDiagram
 
 
 
-> \*\*Nota sobre el correo:\*\* los mensajes de verificación pueden llegar a la carpeta de \*\*Spam / Correo no deseado\*\*, especialmente si la cuenta de Gmail configurada es nueva o recién empezó a enviar correos automáticos. Revisar ahí si no aparece en la bandeja de entrada.
+> \\\\\\\*\\\\\\\*Nota sobre el correo:\\\\\\\*\\\\\\\* los mensajes de verificación pueden llegar a la carpeta de \\\\\\\*\\\\\\\*Spam / Correo no deseado\\\\\\\*\\\\\\\*, especialmente si la cuenta de Gmail configurada es nueva o recién empezó a enviar correos automáticos. Revisar ahí si no aparece en la bandeja de entrada.
 
 
 
@@ -187,17 +186,17 @@ classDiagram
 
 | `PORT`        | Puerto donde corre el servidor (por defecto 3000)         |
 
-| `BASE\_URL`    | URL base usada para construir el enlace de verificación   |
+| `BASE\\\\\\\_URL`    | URL base usada para construir el enlace de verificación   |
 
-| `SMTP\_HOST`   | Servidor SMTP (ej. `smtp.gmail.com`)                       |
+| `SMTP\\\\\\\_HOST`   | Servidor SMTP (ej. `smtp.gmail.com`)                       |
 
-| `SMTP\_PORT`   | Puerto SMTP (587 para TLS, 465 para SSL)                   |
+| `SMTP\\\\\\\_PORT`   | Puerto SMTP (587 para TLS, 465 para SSL)                   |
 
-| `SMTP\_USER`   | Correo remitente                                           |
+| `SMTP\\\\\\\_USER`   | Correo remitente                                           |
 
-| `SMTP\_PASS`   | Contraseña de aplicación del correo remitente              |
+| `SMTP\\\\\\\_PASS`   | Contraseña de aplicación del correo remitente              |
 
-| `SMTP\_FROM`   | Correo que aparece como remitente en el mensaje enviado    |
+| `SMTP\\\\\\\_FROM`   | Correo que aparece como remitente en el mensaje enviado    |
 
 
 
